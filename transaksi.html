@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - TechShop</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm() {
+            const transactionName = document.getElementById("transaction-name").value;
+            const quantity = document.getElementById("quantity").value;
+            const category = document.getElementById("category").value;
+            let errorMessage = "";
+            if (transactionName === "") {
+                errorMessage += "Nama transaksi tidak boleh kosong.\n";
+            }
+            if (quantity <= 0) {
+                errorMessage += "Jumlah harus lebih dari 0.\n";
+            }
+            if (category === "") {
+                errorMessage += "Kategori tidak boleh kosong.\n";
+            }
+            if (errorMessage) {
+                alert(errorMessage);
+                return false;
+            }
+            return true; 
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" alt="LogoTechShop" class="logo">
+        <h1>TechShop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html">Login</a></li>
+                <li><a href="profil.html">Profil Toko</a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr class="hr">
+
+    <main>
+        <section class="transaksi">
+            <h2>Isi Form Transaksi</h2>
+            <div class="form-container">
+                <form onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="transaction-name">Nama Transaksi:</label>
+                        <input type="text" id="transaction-name" name="transaction-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Jumlah:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Kategori:</label>
+                        <input type="text" id="category" name="category" required>
+                    </div>
+                    
+                    <button type="submit" class="btn">Simpan</button>
+                </form>
+                <p><a href="daftar_transaksi.html">Lihat Daftar Transaksi</a></p>
+            </div>
+        </section>
+    </main>
+    <hr class="hr">
+
+    <footer>
+        <p>&copy; 2025 TechShop. Semua hak dilindungi.</p>
+    </footer>
+    <hr class="hr"
+</body>
+</html>
